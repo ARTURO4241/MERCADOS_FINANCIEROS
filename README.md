@@ -14,5 +14,7 @@ Como resultados generales se obtuvo que en cada caso estudiado la recomendación
 
 Además, para el análisis de series de tiempo se obtuvieron las siguientes imágenes de series de tiempo y en base 100.
 
+https://github.com/ARTURO4241/MERCADOS_FINANCIEROS/blob/main/1.png
+
 
 
