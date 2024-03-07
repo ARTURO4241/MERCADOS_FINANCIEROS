@@ -1,29 +1,15 @@
-# Funciones para extraer datos de Yahoo Finance
+# Tarea práctica (programación) de descarga de precios históricos y análisis técnico
 
-Este repositorio está diseñado para compartir algunas funciones que hice para descargar datos de Yahoo Finance. De todas estas funciones, la de mayor interés puede ser historico_multiples_precios()
+El código llamado "precios.R" posee una estructura secuencial que realizan los siguientes procesos:
 
-Con esta, se utiliza, como argumentos de entrada, un vector de texto con los ticker de las acciones fondos, futuros o índices que deseas descargar (Te sugiero consultar [Yahoo financer](https://finance.yahoo.com)), así como la fecha inicial, la final y la periodicidad. Esta última puede ser diaria ("D"), semanal ("W") o mensual ("M").
+1. El cálculo de la banda de Bollinger a 20 periodos.
+2. Una recomendación de comprar, vender o mantener cada valor conforme a las reglas de decisión de las bandas de Bollinger.
+3. El cálculo de los valores del MACD y generar una recomendación de compra, venta o mantener (fuerte o especulativo)
+4. El cálculo del oscilador estocástico a 7,3,3  y generar una recomendación.
+5. Con base en las recomendaciones anteriores dar una recomendación general. 
 
-Para cargar en R esta función debes correr el siguiente comando en tu chunk de R en Rstudio o en la consola:
-```{r}
-source("https://raw.githubusercontent.com/OscarVDelatorreTorres/yahooFinance/main/datosMultiplesYahooFinance.R")
-```
-Con esto, cargarás la función en tu ambiente de trabajo.
+Además el código anterior es capás de generar una gráfica de la serie de tiempo e inclusive una gráfica base 100 para la visualización de fluctuaciones.
 
-Para ver como funciona, puedes corres este ejemplo:
+Como resultados generales se obtuvo que en cada caso estudiado la recomendación es comprar de manera especulativa, lo cual puede ser resultado de una alta exigencia en los parámetros de inversión.
 
 
-```{r}
-# Ejemplo para descargar los históricos diarios de grupo Alfa, Microsoft en EEUU, Micrososft en México y el índice S&P/BMV IPC, desde el 1 de enrdo de 2023 a la fecha actual:
-tickerV=c("ALFAA.MX","MSFT","MSFT.MX","^MXX")
-deD="2023-01-01"
-hastaD=Sys.Date()
-per="D"
-
-Datos=historico_multiples_precios(tickers=tickerV,de=deD,hasta=hastaD,periodicidad=per)
-```
-En este ejemplo, el objeto Datos es un objeto tipo lista con 3 de estos:
-
-1. Una tabla con los precios de cierre y fechas homogeneizadas a las del primer ticker (ALFAA.MX).
-2. Una tabla similar pero cn las variaciones porcentuales en tiempo contínuo.
-3. Los objetos de los precios extraidos desde Yahoo Finance para cada ticker.
