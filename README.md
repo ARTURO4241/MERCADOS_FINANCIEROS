@@ -12,4 +12,7 @@ Además el código anterior es capás de generar una gráfica de la serie de tie
 
 Como resultados generales se obtuvo que en cada caso estudiado la recomendación es comprar de manera especulativa, lo cual puede ser resultado de una alta exigencia en los parámetros de inversión.
 
+Además, para el análisis de series de tiempo se obtuvieron las siguientes imágenes de series de tiempo y en base 100.
+
+
 
